@@ -34,9 +34,14 @@ docker build -t alpine-mini .
 
 Run all the commands from within the project root directory.
 
+### Generate rootfs.tar
+```bash
+sudo ./mkimage-alpine.sh -s -r v3.4
+```
+
 ### Build the Docker Image
 ```bash
-make create
+docker build .
 ```
 
 #### Push the Docker Image to the Docker Hub
@@ -44,7 +49,7 @@ make create
 * Second push the Docker Image to the official Docker Hub
 
 ```bash
-make push
+docker push
 ```
 
 ## License
