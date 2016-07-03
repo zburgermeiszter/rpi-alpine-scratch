@@ -75,21 +75,20 @@ SAVE=${SAVE:-0}
 REPO=$MIRROR/$REL/main
 ARCH=armhf
 #ARCH=$(uname -m)
-TAG=firecyberice/armhf-alpine
+TAG=armhf-alpine
 
-echo -e "prepare\n\n"
+echo "prepare\n\n"
 tmp && getapk
 
-echo -e "makebase\n\n"
+echo "makebase\n\n"
 mkbase
 
 
-echo -e "config\n\n"
-echo -e "$REPO\n" > $ROOTFS/etc/apk/repositories
-#conf
+echo "config\n\n"
+conf
 
-echo -e "pack\n\n"
+echo "pack\n\n"
 pack
 
-echo -e "save\n\n"
+echo "save\n\n"
 save
